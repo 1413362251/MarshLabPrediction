@@ -1,9 +1,8 @@
-from colorama import init, Fore, Style
 import sys
 import os
 
 
-init(autoreset=True)
+
 
 GeneName = sys.argv[1]
 UniprotID = sys.argv[2]
