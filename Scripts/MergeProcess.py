@@ -83,7 +83,7 @@ def data_collectting_process(GeneName,UniprotID):
     af_RSAPath =  rf"{Rawdata_dir}\{GeneName}_AF_RSA.xlsx"
     pdb_RSAPath = rf"{Rawdata_dir}\{GeneName}_PDB_RSA.xlsx"
     VEPSPath = rf"{Rawdata_dir}\{UniprotID}_VEPs.csv"
-    ConsurfPath = fr"{Rawdata_dir}\{UniprotID}_consurf.xlsx"
+    ConsurfPath = fr"{Rawdata_dir}\{UniprotID}_A_consurf_grades.txt"
     DESCRIBEPROPath = rf"{Rawdata_dir}\{UniprotID}_testresult.csv"
     FULLPath = rf"{OutPutData_dir}\{GeneName}_full.xlsx"
     merge_data(Uniprot_Clinvar_MarshP_MarshG_CleanedPath,

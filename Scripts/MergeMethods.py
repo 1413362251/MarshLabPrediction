@@ -595,8 +595,11 @@ def merge_data(Uniprot_Clinvar_MarshP_MarshG_CleanedPath,
 
     #Conservartoin
     #consurf
+
     path7 = ConsurfPath
-    df7 = pd.read_excel(path7)
+    df7 = pd.read_csv(path7, delimiter='\t', header=23)
+    df7 = df7[:-2]
+
 
     #DESCRIBEPRO
     path8 = DESCRIBEPROPath
@@ -606,6 +609,8 @@ def merge_data(Uniprot_Clinvar_MarshP_MarshG_CleanedPath,
     df_merge2_DESCRIBEPRO = pd.merge(df_merge2, df8[['Index','MMseqs2_conservation_propensity','MMseqs2_conservation_decile']], left_on='Position', right_on='Index', how='left')
     df_merge2_DESCRIBEPRO.drop(columns=['Index'], inplace=True)
 
+    df_merge2_DESCRIBEPRO['Position'] = df_merge2_DESCRIBEPRO['Position'].astype(int)
+    df7['POS'] = df7['POS'].astype(int)
     df_merge2_DESCRIBEPRO_consurf = pd.merge(df_merge2_DESCRIBEPRO, df7[['POS',' SCORE','COLOR','CONFIDENCE INTERVAL','RESIDUE VARIETY']], left_on='Position', right_on='POS', how='left')
     df_merge2_DESCRIBEPRO_consurf.drop(columns=['POS'], inplace=True)
     df_merge2_DESCRIBEPRO_consurf.rename(columns={'CONFIDENCE INTERVAL': 'CONFIDENCE_INTERVAL', 'RESIDUE VARIETY': 'RESIDUE_VARIETY'}, inplace=True)

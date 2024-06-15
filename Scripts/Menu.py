@@ -14,9 +14,10 @@ Flag_WebData = False
 Flag_MarshLabData = False
 Web_data_lst = [f"{download_dir}/{GeneName}_clinvar_result.xlsx",
                 f"{download_dir}/{UniprotID}.xml",
-                f"{download_dir}/{UniprotID}_consurf.xlsx",
+                f"{download_dir}/{UniprotID}_A_consurf_grades.txt",
                 f"{download_dir}/{UniprotID}_testresult.csv",
                 ]
+
 MarshLab_data_lst = [f"{download_dir}/MarshLab_clinvar_uniprot.tsv",
                 f"{download_dir}/MarshLab_gnomad.tsv",
                 f"{download_dir}/MarshLab_PDB_RSA.csv",

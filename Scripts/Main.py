@@ -13,7 +13,7 @@ def check_missing():
     download_dir = os.path.join(parent_dir, 'DataHandle', 'RawData')
     Web_data_lst = [f"{download_dir}/{GeneName}_clinvar_result.xlsx",
                     f"{download_dir}/{UniprotID}.xml",
-                    f"{download_dir}/{UniprotID}_consurf.xlsx",
+                    f"{download_dir}/{UniprotID}_A_consurf_grades.txt",
                     f"{download_dir}/{UniprotID}_testresult.csv",
                     ]
     MarshLab_data_lst = [f"{download_dir}/MarshLab_clinvar_uniprot.tsv",
@@ -34,8 +34,8 @@ def check_missing():
             missing_files.append(os.path.basename(file))
     return missing_files
 
-GeneName = 'KCNQ2'
-UniprotID = 'O43526'
+GeneName = 'KCNQ3'
+UniprotID = 'O43525'
 check_folders()
 
 if not GeneName:
